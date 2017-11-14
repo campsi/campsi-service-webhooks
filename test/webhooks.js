@@ -15,6 +15,7 @@ chai.use(chaiHttp);
 chai.should();
 
 const services = {
+    Trace: require('campsi-service-trace'),
     WebHooks: require('../lib'),
 };
 
@@ -26,9 +27,10 @@ describe('Assets API', () => {
             db.dropDatabase(() => {
                 db.close();
                 campsi = new CampsiServer(config.campsi);
-                campsi.mount('assets', new services.Assets(config.services.webhooks));
+                campsi.mount('trace', new services.Trace(config.services.trace));
+                campsi.mount('webhooks', new services.WebHooks(config.services.webHooks));
 
-                campsi.on('ready', () => {
+                campsi.on('campsi/ready', () => {
                     server = campsi.listen(config.port);
                     done();
                 });
@@ -44,6 +46,19 @@ describe('Assets API', () => {
     afterEach((done) => {
         server.close();
         done();
+    });
+    /*
+     * Test a simple webhook
+     */
+    describe('Basic webhook', () => {
+        it('it should call a trace event when emiting a hooked event.', (done) => {
+            campsi.on('trace/request', (payload) => {
+                payload.should.be.a('object');
+                payload.method.should.be.eq('GET');
+                done();
+            });
+            campsi.emit('webhooks/test/topic');
+        });
     });
     /*
      * Test the /GET / route
