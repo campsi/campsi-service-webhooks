@@ -1,7 +1,7 @@
 process.env.NODE_CONFIG_DIR = './test/config';
 process.env.NODE_ENV = 'test';
 
-const {MongoClient} = require('mongodb');
+const {MongoClient, Server} = require('mongodb');
 const debug = require('debug')('campsi:test');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -23,9 +23,11 @@ describe('Assets API', () => {
     beforeEach((done) => {
 
         // Empty the database
-        MongoClient.connect(config.campsi.mongoURI).then((db) => {
+        let client = new MongoClient(new Server(config.campsi.mongo.host, config.campsi.mongo.port));
+        client.connect((error, mongoClient) => {
+            let db = mongoClient.db(config.campsi.mongo.name);
             db.dropDatabase(() => {
-                db.close();
+                client.close();
                 campsi = new CampsiServer(config.campsi);
                 campsi.mount('trace', new services.Trace(config.services.trace));
                 campsi.mount('webhooks', new services.WebHooks(config.services.webHooks));
