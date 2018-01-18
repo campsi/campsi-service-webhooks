@@ -8,7 +8,7 @@ module.exports = {
         mongo: {
             'host': 'localhost',
             'port': 27017,
-            'name': 'relationships'
+            'database': 'relationships'
         }
     },
     services: {
