@@ -17,7 +17,6 @@ module.exports = {
         },
         webHooks: {
             title: 'WebHooks',
-            namespace: 'hooks-ns',
             options: {
                 preserveHooks: false,
                 hooks: {
