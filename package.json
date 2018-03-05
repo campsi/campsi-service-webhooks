@@ -1,6 +1,6 @@
 {
   "name": "campsi-service-webhooks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/index.js",
   "repository": {
@@ -14,14 +14,14 @@
     "string-format": "^0.5.0"
   },
   "devDependencies": {
-    "campsi": "^1.0.5",
+    "campsi": "^1.0.6",
     "campsi-service-trace": "^1.0.1",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "config": "^1.30.0",
     "coveralls": "^3.0.0",
     "depcheck": "^0.6.9",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-indexof": "^0.1.1",
