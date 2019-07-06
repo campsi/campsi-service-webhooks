@@ -14,28 +14,11 @@ module.exports = {
     trace: {
       title: 'trace'
     },
-    webHooks: {
+    webhooks: {
       title: 'WebHooks',
       options: {
-        preserveHooks: false,
-        hooks: {
-          wh1: {
-            topic: 'webhooks/test/topic',
-            callback: {
-              url: 'http://localhost:3000/trace/my-wh1'
-            }
-          },
-          wh2: {
-            topic: 'webhooks/test/topic/other',
-            callback: {
-              method: 'POST',
-              url: 'http://localhost:3000/trace/my-wh2?foo=bar',
-              headers: {
-                'x-foo': 'bar'
-              }
-            }
-          }
-        }
+        channel: 'webhooks',
+        requireAuth: true
       }
     }
   }
