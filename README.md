@@ -28,7 +28,9 @@ Expecting a JSON body containing the following properties
 Removes a webhook based on its id.
 
 ## TODO
- - [ ] 
+ - [ ] isAdmin
+ - [ ] paginateCursor
+ - [ ] event authorization (check if the owner of the webhook is authorized to listen to such event)
  
 [build-image]: https://travis-ci.org/campsi/campsi-service-webhooks.svg?branch=master
 [build-url]: https://travis-ci.org/campsi/campsi-service-webhooks
