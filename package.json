@@ -20,7 +20,7 @@
     "chai": "^4.2.0",
     "chai-http": "^3.0.0",
     "config": "^1.31.0",
-    "coveralls": "^3.0.4",
+    "coveralls": "^3.0.8",
     "depcheck": "^0.6.11",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
