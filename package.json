@@ -11,7 +11,7 @@
     "debug": "^3.2.6",
     "for-in": "^1.0.2",
     "mongodb": "^3.2.7",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "string-format": "^0.5.0"
   },
   "devDependencies": {
