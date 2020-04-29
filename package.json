@@ -10,7 +10,7 @@
   "dependencies": {
     "debug": "^3.2.6",
     "for-in": "^1.0.2",
-    "mongodb": "^3.2.7",
+    "mongodb": "^3.5.7",
     "request": "^2.88.0",
     "string-format": "^0.5.0"
   },
